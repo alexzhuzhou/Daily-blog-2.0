@@ -63,6 +63,15 @@ exports.updatePost = async (req, res) => {
   }
 };
 
+exports.getPostsByUser = async (req, res) => {
+  try {
+    const posts = await Post.find({ author: req.params.userId }).populate("author", "username");
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching user's posts", error: err.message });
+  }
+};
+
 //delete post
 exports.deletePost = async (req, res) => {
   try {
@@ -78,3 +87,23 @@ exports.deletePost = async (req, res) => {
     res.status(500).json({ message: "Error deleting post", error: err.message });
   }
 };
+
+
+exports.getPostsByUsername = async (req, res) => {
+  const { username } = req.params;
+
+  try {
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const posts = await Post.find({ author: user._id }).populate("author", "username");
+    res.status(200).json(posts);
+
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching posts by username", error: err.message });
+  }
+};
+

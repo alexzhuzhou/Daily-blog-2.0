@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-
+import { register as registerUser } from '@/lib/api' 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' })
   const [message, setMessage] = useState('')
@@ -10,16 +10,13 @@ export default function RegisterPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async e => {
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
-      const data = await res.json()
-      if (res.ok) {
+      const data = await registerUser(formData)
+      if (data.token) {
         localStorage.setItem('token', data.token)
         setMessage('Registration successful!')
       } else {

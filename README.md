@@ -7,7 +7,6 @@ A modern full-stack blogging platform where users can register, log in (with ema
 ##  Features
 
 -  User Authentication (Email/Password) (Google AUTH in PROGRESS)
-
 -  JWT-based session handling
 -  Create, view, edit, and delete blog posts
 -  User-specific post feeds
@@ -19,7 +18,7 @@ A modern full-stack blogging platform where users can register, log in (with ema
 ##  Demo
 
  [Live Demo](https://daily-blog-2-0-2lfaykm5x-alexzhuzhous-projects.vercel.app/)
-
+-- DO NOT USE GOOGLE AUTHENTICATION YET.
 
 ---
 

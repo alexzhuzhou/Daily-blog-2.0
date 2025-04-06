@@ -20,6 +20,8 @@ A modern full-stack blogging platform where users can register, log in (with ema
  [Live Demo](https://daily-blog-2-0-2lfaykm5x-alexzhuzhous-projects.vercel.app/)
 -- DO NOT USE GOOGLE AUTHENTICATION YET.
 
+-- NEED TO WAIT 10 SECONDS UNTIL POSTS ARE LOADED, DUE TO RENDER FREE TRIAL 
+
 ---
 
 ##  Tech Stack

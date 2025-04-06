@@ -30,7 +30,8 @@ export default function UserProfilePage() {
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">{username}'s Posts</h1>
+      <h1 className="text-3xl font-bold mb-6">{`${username}'s Posts`}</h1>
+
       {posts.length === 0 ? (
         <p>This user hasn't posted anything yet.</p>
       ) : (

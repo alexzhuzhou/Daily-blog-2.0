@@ -17,7 +17,7 @@ A modern full-stack blogging platform where users can register, log in (with ema
 
 ##  Demo
 
-👉 [Live Demo]([https://your-frontend-url.vercel.app](https://daily-blog-2-0-2lfaykm5x-alexzhuzhous-projects.vercel.app/))
+ [Live Demo](https://daily-blog-2-0-2lfaykm5x-alexzhuzhous-projects.vercel.app/)
 
 
 ---
@@ -48,6 +48,7 @@ A modern full-stack blogging platform where users can register, log in (with ema
 `npm run dev`
 ### Project Structure
 /frontend       # Next.js + Tailwind frontend
+
 /backend        # Express + MongoDB backend
 ## Deployment
 Frontend: Vercel

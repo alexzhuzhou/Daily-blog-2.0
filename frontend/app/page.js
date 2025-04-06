@@ -23,7 +23,9 @@ export default function HomePage() {
         posts.map(post => (
           <div key={post._id} className="mb-6 border-b pb-4">
             <h2 className="text-xl font-semibold">{post.title}</h2>
-            <p className="text-sm text-gray-500 mb-2">By {post.author?.username}</p>
+            <p className="text-sm text-gray-500 mb-2">
+              By <a href={`/user/${post.author?.username}`} className="text-blue-600 hover:underline">{post.author?.username}</a>
+            </p>
             <p>{post.content?.substring(0, 120) || 'No content available.'}</p>
             <a href={`/posts/${post._id}`} className="text-blue-600 hover:underline">
               Read More →

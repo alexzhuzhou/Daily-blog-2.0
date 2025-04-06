@@ -57,7 +57,10 @@ export default function PostDetailPage() {
   return (
     <div className="p-8 max-w-2xl mx-auto">
       <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-      <p className="text-gray-500 mb-4">By {post.author?.username}</p>
+      <p className="text-sm text-gray-500 mb-2">
+      By <a href={`/user/${post.author?.username}`} className="text-blue-600 hover:underline">{post.author?.username}</a>
+      </p>
+
       <p className="whitespace-pre-wrap mb-6">{post.content}</p>
 
       {isAuthor && (

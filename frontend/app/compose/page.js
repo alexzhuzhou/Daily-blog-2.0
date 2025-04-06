@@ -1,12 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { useUser } from '@/context/UserContext'
 
 export default function ComposePage() {
   const [formData, setFormData] = useState({ title: '', content: '' })
   const [message, setMessage] = useState('')
   const { token, user } = useUser()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!token) {
+      router.push('/login') 
+    }
+  }, [token, router])
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })

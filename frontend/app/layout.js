@@ -1,17 +1,20 @@
-
 import './globals.css'
 import { UserProvider } from '@/context/UserContext'
+import Navbar from '@/components/Navbar' 
 
 export const metadata = {
   title: 'Daily Blog',
-  description: 'Your personal blogging platform',
+  description: 'A fullstack blog platform',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <UserProvider>{children}</UserProvider>
+        <UserProvider>
+          <Navbar />        
+          {children}
+        </UserProvider>
       </body>
     </html>
   )

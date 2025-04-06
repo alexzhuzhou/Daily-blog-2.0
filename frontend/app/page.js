@@ -31,16 +31,6 @@ export default function HomePage() {
           </div>
         ))
       )}
-      <div className="p-4">
-      {user ? (
-        <>
-          <p>Welcome, {user.username}!</p>
-          <button onClick={logout} className="text-red-600 underline">Logout</button>
-        </>
-      ) : (
-        <p>You are not logged in.</p>
-      )}
-    </div>
     </div>
     
   )

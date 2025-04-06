@@ -33,7 +33,7 @@ export default function UserProfilePage() {
       <h1 className="text-3xl font-bold mb-6">{`${username}'s Posts`}</h1>
 
       {posts.length === 0 ? (
-        <p>This user hasn't posted anything yet.</p>
+        <p>This user hasn&apos;t posted anything yet.</p>
       ) : (
         posts.map(post => <PostCard key={post._id} post={post} />)
       )}

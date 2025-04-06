@@ -4,7 +4,8 @@ import Link from 'next/link'
 
 export default function PostCard({ post }) {
   return (
-    <div className="bg-white shadow-md rounded-xl p-6 mb-6 transition hover:shadow-lg border">
+    <div className="bg-white dark:bg-gray-800 text-black dark:text-white shadow-md rounded-xl p-6 mb-6">
+
       <h2 className="text-2xl font-semibold text-gray-900 mb-1">{post.title}</h2>
       <p className="text-sm text-gray-500 mb-2">
         By{' '}

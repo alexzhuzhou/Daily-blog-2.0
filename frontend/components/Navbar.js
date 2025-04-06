@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useUser } from '@/context/UserContext'
 import { useRouter } from 'next/navigation'
+import DarkModeToggle from './DarkModeToggle'
 
 export default function Navbar() {
   const { user, logout } = useUser()
@@ -14,7 +15,8 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm px-6 py-4 flex flex-wrap justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm px-6 py-4 flex flex-wrap justify-between items-center">
+
       <div className="flex items-center space-x-4">
         <Link href="/" className="font-bold text-lg text-gray-900">
           Daily Blog
@@ -46,6 +48,7 @@ export default function Navbar() {
             </Link>
           </>
         )}
+        <DarkModeToggle /> 
       </div>
     </nav>
   )

@@ -1,12 +1,13 @@
 # Daily Blog 2.0
 
-A modern full-stack blogging platform where users can register, log in (with email or Google), and create, edit, and view blog posts. Built with Next.js (App Router), Node.js, Express, and MongoDB — fully deployed with Vercel and Render.
+A modern full-stack blogging platform where users can register, log in (with email), and create, edit, and view blog posts. Built with Next.js (App Router), Node.js, Express, and MongoDB, fully deployed with Vercel and Render.
 
 ---
 
 ##  Features
 
--  User Authentication (Email/Password)
+-  User Authentication (Email/Password) (Google AUTH in PROGRESS)
+
 -  JWT-based session handling
 -  Create, view, edit, and delete blog posts
 -  User-specific post feeds

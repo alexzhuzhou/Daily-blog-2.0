@@ -1,11 +1,14 @@
 'use client'
 
 import { useState } from 'react'
+import { useUser } from '@/context/UserContext' 
 import { login as loginUser } from '@/lib/api'
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ email: '', password: '' })
   const [message, setMessage] = useState('')
+
+  const { setUser, setToken } = useUser() 
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -16,9 +19,9 @@ export default function LoginPage() {
     try {
       const data = await loginUser(formData)
       if (data.token) {
-        localStorage.setItem('token', data.token)
+        setToken(data.token)
+        setUser(data.user)
         setMessage('Login successful!')
-
       } else {
         setMessage(data.message || 'Login failed')
       }

@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { useUser } from '@/context/UserContext'
 
 export default function ComposePage() {
   const [formData, setFormData] = useState({ title: '', content: '' })
   const [message, setMessage] = useState('')
+  const { token, user } = useUser()
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -12,7 +14,6 @@ export default function ComposePage() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const token = localStorage.getItem('token')
 
     if (!token) {
       setMessage("You're not logged in.")

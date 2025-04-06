@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { useUser } from '@/context/UserContext'
 import { register as registerUser } from '@/lib/api' 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' })
   const [message, setMessage] = useState('')
+  const { setUser, setToken } = useUser()
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -17,7 +19,8 @@ export default function RegisterPage() {
     try {
       const data = await registerUser(formData)
       if (data.token) {
-        localStorage.setItem('token', data.token)
+        setToken(data.token)       
+        setUser(data.user)
         setMessage('Registration successful!')
       } else {
         setMessage(data.message || 'Registration failed')
@@ -27,6 +30,7 @@ export default function RegisterPage() {
       setMessage('Something went wrong.')
     }
   }
+  
 
   return (
     <div className="p-8 max-w-md mx-auto">

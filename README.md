@@ -39,13 +39,13 @@ A modern full-stack blogging platform where users can register, log in (with ema
 
 ## Local Development
 ### Backend
-cd backend
-npm install
-npm run dev   # or: node app.js
+`cd backend`
+`npm install`
+`npm run dev`   # or: node app.js
 ### Frontend
-cd frontend
-npm install
-npm run dev
+`cd frontend`
+`npm install`
+`npm run dev`
 ### Project Structure
 /frontend       # Next.js + Tailwind frontend
 /backend        # Express + MongoDB backend

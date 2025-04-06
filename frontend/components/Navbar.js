@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useUser } from '@/context/UserContext'
 import { useRouter } from 'next/navigation'
 import DarkModeToggle from './DarkModeToggle'
+import Image from 'next/image'
 
 export default function Navbar() {
   const { user, logout } = useUser()
@@ -18,6 +19,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm px-6 py-4 flex flex-wrap justify-between items-center">
 
       <div className="flex items-center space-x-4">
+        <Image src="/favicon.svg" alt="Logo" width={24} height={24} />
         <Link href="/" className="font-bold text-lg text-gray-900">
           Daily Blog
         </Link>

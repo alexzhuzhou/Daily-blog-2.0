@@ -4,7 +4,9 @@ import Navbar from '@/components/Navbar'
 
 export const metadata = {
   title: 'Daily Blog',
-  description: 'A fullstack blog platform',
+  icons: {
+    icon: '/favicon.svg'
+  }
 }
 
 export default function RootLayout({ children }) {

@@ -22,6 +22,7 @@ export default function ComposePage() {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    const token = localStorage.getItem('token')
 
     if (!token) {
       setMessage("You're not logged in.")

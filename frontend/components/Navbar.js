@@ -14,22 +14,36 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-gray-100 px-6 py-4 flex justify-between items-center">
-      <div className="space-x-4">
-        <Link href="/" className="font-semibold text-lg">Daily Blog</Link>
-        <Link href="/">Home</Link>
-        {user && <Link href="/compose">Compose</Link>}
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm px-6 py-4 flex flex-wrap justify-between items-center">
+      <div className="flex items-center space-x-4">
+        <Link href="/" className="font-bold text-lg text-gray-900">
+          Daily Blog
+        </Link>
+        <Link href="/" className="text-sm text-gray-600 hover:text-black">
+          Home
+        </Link>
+        {user && (
+          <Link href="/compose" className="text-sm text-gray-600 hover:text-black">
+            Compose
+          </Link>
+        )}
       </div>
-      <div className="space-x-4">
+      <div className="flex items-center space-x-4 text-sm">
         {user ? (
           <>
-            <span>Welcome, {user.username}!</span>
-            <button onClick={handleLogout} className="text-red-600 hover:underline">Logout</button>
+            <span className="text-gray-600">Hi, {user.username}</span>
+            <button onClick={handleLogout} className="text-red-600 hover:underline">
+              Logout
+            </button>
           </>
         ) : (
           <>
-            <Link href="/login">Login</Link>
-            <Link href="/register">Register</Link>
+            <Link href="/login" className="text-gray-600 hover:text-black">
+              Login
+            </Link>
+            <Link href="/register" className="text-gray-600 hover:text-black">
+              Register
+            </Link>
           </>
         )}
       </div>

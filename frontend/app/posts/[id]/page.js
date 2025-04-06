@@ -53,32 +53,38 @@ export default function PostDetailPage() {
   console.log("Post Author ID:", post?.author?._id)
 
 
-
   return (
-    <div className="p-8 max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-      <p className="text-sm text-gray-500 mb-2">
-      By <a href={`/user/${post.author?.username}`} className="text-blue-600 hover:underline">{post.author?.username}</a>
-      </p>
-
-      <p className="whitespace-pre-wrap mb-6">{post.content}</p>
-
-      {isAuthor && (
-        <div className="space-x-4">
-          <button
-            onClick={() => router.push(`/posts/edit/${post._id}`)}
-            className="text-blue-600 underline"
-          >
-            Edit
-          </button>
-          <button
-            onClick={handleDelete}
-            className="text-red-600 underline"
-          >
-            Delete
-          </button>
+    <div className="bg-gray-50 min-h-screen py-10 px-4">
+      <div className="max-w-2xl mx-auto bg-white shadow-md rounded-xl p-8">
+        <h1 className="text-4xl font-bold text-gray-900 mb-2">{post.title}</h1>
+        <p className="text-sm text-gray-500 mb-6">
+          By{' '}
+          <a href={`/user/${post.author?.username}`} className="text-blue-600 hover:underline">
+            {post.author?.username}
+          </a>
+        </p>
+        <div className="prose prose-lg text-gray-800 mb-6 max-w-none">
+          {post.content}
         </div>
-      )}
+  
+        {isAuthor && (
+          <div className="space-x-4">
+            <button
+              onClick={() => router.push(`/posts/edit/${post._id}`)}
+              className="text-blue-600 hover:underline"
+            >
+              Edit
+            </button>
+            <button
+              onClick={handleDelete}
+              className="text-red-600 hover:underline"
+            >
+              Delete
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   )
+  
 }
